@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ListTVC.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
+    
+    // here we will add a table view controller as the rootviewcontroller
+    
+    //UITableViewController * rootTVC = [[UITableViewController alloc] init];
+    
+    self.window.rootViewController = [[ListTVC alloc] init];
+    
+    // NOTES: UITableViewController is a class; alloc is a class method; init is an instance method
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
